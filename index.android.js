@@ -2,16 +2,30 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
+  Navigator,
   Text,
-  View
+  TouchableHighlight
 } from 'react-native';
+import MainPage from './src/components/MainPage';
 
-class reactNatiNati extends Component {
+
+
+
+class Navigation extends React.Component{
   render() {
     return (
-      
+      <Navigator
+        initialRoute={{id: 'MainPage'}}
+        renderScene={this.navigatorRenderScene}/>
     );
   }
+
+  navigatorRenderScene(route, navigator) {
+    switch (route.id) {
+      case 'MainPage':
+        return (<mainPage navigator={navigator} title="mainPage"/>);
+    }
+  }
 }
-AppRegistry.registerComponent('reactNatiNati', () => reactNatiNati);
+
+AppRegistry.registerComponent('reactNatiNati', () => Navigation);

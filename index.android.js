@@ -23,7 +23,7 @@ class Navigation extends React.Component{
   navigatorRenderScene(route, navigator) {
     switch (route.id) {
       case 'MainPage':
-        return (<mainPage navigator={navigator} title="mainPage"/>);
+        return (<MainPage navigator={navigator} title="mainPage"/>);
     }
   }
 }

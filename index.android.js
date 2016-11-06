@@ -7,6 +7,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 import MainPage from './src/components/MainPage';
+import MainShape from './src/components/shapes/MainShape';
 
 
 
@@ -24,8 +25,9 @@ class Navigation extends React.Component{
     switch (route.id) {
       case 'MainPage':
         return (<MainPage navigator={navigator} title="mainPage"/>);
+      case 'Shapes' : 
+        return (<MainShape navigator={navigator} title="shapes"/>);
     }
   }
 }
-
 AppRegistry.registerComponent('reactNatiNati', () => Navigation);

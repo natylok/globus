@@ -8,16 +8,20 @@ import {
   TouchableHighlight
 } from 'react-native';
 import Logo from './Logo'
-
+import SelectCategoreis from './selectCategoreis'
+import Global from './consts/Global'
 
 
 export default class MainPage extends React.Component{
-  render() {
+  constructor(props){
+    super(props); 
+  }
+    render() {
+   
     return (
       <View style={styles.mainPage}>
-        <Logo style={styles.logo}/>
-        <View style={styles.mainView}></View>
-        <View style={styles.footerView}></View>
+        <Logo style={styles.Logo}/>
+        <SelectCategoreis navigator={this.props.navigator} style={styles.SelectCategoreis} categoriesList={Global.categoriesList}/>
       </View>
     );
   }
@@ -26,17 +30,14 @@ export default class MainPage extends React.Component{
 let styles = StyleSheet.create({
   mainPage: {
     flex:1,
-    backgroundColor:"#262626"
+    backgroundColor:"#F1F1F1"
   },
-  logo: {
-    flex:0.8,
-    borderBottomColor:"white",
-    borderBottomWidth:1 
+  Logo:{
+    flex:0.7,
+    backgroundColor:"#1E1E1E"
   },
-  mainView: {
-    flex:6
-  },
-  footerView:{
-    flex:2
+  SelectCategoreis:{
+    flex:8
   }
 });
+
